@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, url_for
 
 app = Flask(__name__)
 
@@ -29,11 +29,17 @@ info_evento = {
 	}
 }
 
+@app.route("/80k")
+def tandil80k():
+    return render_template("index.html", section=80)
 
-@app.route("/")
-def home():
-    return render_template("index.html")
+@app.route("/30k")
+def tandil30k():
+    return render_template("index.html", section=30)
 
+@app.route("/registration")
+def registration():
+    return render_template("registration.html")
 
 if __name__ == "__main__":
     app.run("localhost", 8080, debug=True)
