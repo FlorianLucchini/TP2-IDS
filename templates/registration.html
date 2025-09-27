@@ -38,9 +38,15 @@
             <label for="categoria">Categoría:</label>
             <select id="categoria" name="categoria" required>
                 <option value="">-- Selecciona una categoría --</option>
-                <option value="30k">30K - Distancia Corta</option>
-                <option value="80k">80K - Distancia Larga</option>
+                <option value="1">30K - Distancia Corta</option>
+                <option value="2">80K - Distancia Larga</option>
             </select>
+        </div>
+
+        <!-- Precio -->
+        <div class="form-group">
+            <label>Precio de inscripción:</label>
+            <p id="precio">Seleccione una categoría para ver el precio</p>
         </div>
 
         <!-- Género -->
@@ -56,10 +62,10 @@
             <label for="otro">Otro</label>
         </div>
 
-        <!-- Aceptar términos -->
+        <!-- Deslinde de responsabilidad -->
         <div class="form-group">
-            <input type="checkbox" id="terminos" name="terminos" required>
-            <label for="terminos">Acepto los términos y condiciones</label>
+            <label for="archivo">Adjuntar deslinde de responsabilidad:</label>
+            <input type="file" id="archivo" name="archivo" required>
         </div>
 
         <!-- Botón -->
@@ -67,4 +73,13 @@
             <button type="submit">Registrarme</button>
         </div>
     </form>
+
+    <script id="costos-data" type="application/json">
+        {
+            {% for key, modalidad in evento.modalidad_costo.items() %}
+                "{{ key }}": "{{ modalidad.valor }}"{% if not loop.last %},{% endif %}
+            {% endfor %}
+        }
+    </script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
 {% endblock %}

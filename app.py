@@ -12,8 +12,8 @@ info_evento = {
         "lugar": "Tandil, Buenos Aires",
         "tipo_carrera": "MTB rural",
         "modalidad_costo": {
-            1: {"nombre": "Corta", "valor": "100"},
-            2: {"nombre": "Larga", "valor": "200"},
+            1: {"nombre": "Distancia Corta", "valor": "100"},
+            2: {"nombre": "Distancia Larga", "valor": "200"},
         },
         "Auspiciantes": ["ausp1", "auspN"],
     }
@@ -32,7 +32,8 @@ def tandil30k():
 
 @app.route("/registration", methods=["GET"])
 def registration():
-    return render_template("registration.html")
+    evento = info_evento[1]
+    return render_template("registration.html", evento=evento)
 
 
 @app.route("/registration", methods=["POST"])
@@ -43,9 +44,9 @@ def submit_registration():
     fecha_nacimiento = request.form["fecha_nacimiento"]
     categoria = request.form["categoria"]
     genero = request.form["genero"]
-    terminos = request.form.get("terminos")
+    archivo = request.form.get("archivo")
 
-    if not all([nombre, email, telefono, fecha_nacimiento, categoria, genero, terminos]):
+    if not all([nombre, email, telefono, fecha_nacimiento, categoria, genero, archivo]):
         return "Por favor completa todos los campos obligatorios."
 
 	# Aquí se deben enviar los datos al email del organizador
