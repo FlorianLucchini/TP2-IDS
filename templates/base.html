@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,19 +8,25 @@
     {% block css_dinamico %}{% endblock %}
     <title>Document</title>
 </head>
+
 <body>
-    <nav class="nav">
-        <a href="{{ url_for('tandil80k') }}">TANDIL 80K</a>
-        <a href="{{ url_for('tandil30k') }}">TANDIL 30K</a>
-        <a href="{{ url_for('registration') }}">INSCRIBITE</a>
-    </nav>
+    <div class="header">
+        <nav class="navbar">
+            <a class="navbar__item" href="{{ url_for('tandil80k') }}">TANDIL 80K</a>
+            <a class="navbar__item" href="{{ url_for('tandil30k') }}">TANDIL 30K</a>
+            <a class="navbar__item" href="{{ url_for('registration') }}">INSCRIBITE</a>
+        </nav>
+        <img class="header__logo" src="" alt="logo-de-pagina">
+    </div>
+
 
     <main class="main">
         {% block content %}{% endblock %}
     </main>
-    
+
     <footer>
         A
     </footer>
 </body>
+
 </html>
