@@ -12,4 +12,18 @@
     <section class="section-a">
         eoo
     </section>
+    
+    <section class="section-f">
+        <div class="auspiciantes">
+            <h2>Auspiciantes</h2>
+            <div class="logos">
+                {% for ausp in evento["Auspiciantes"] %}
+                    <div class="logo-card">
+                        <img src="{{ url_for('static', filename=ausp['logo']) }}" alt="{{ ausp['nombre'] }}">
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
 {% endblock %}

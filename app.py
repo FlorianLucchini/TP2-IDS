@@ -15,19 +15,54 @@ info_evento = {
             1: {"nombre": "Distancia Corta", "valor": "100"},
             2: {"nombre": "Distancia Larga", "valor": "200"},
         },
-        "Auspiciantes": ["ausp1", "auspN"],
+        "Auspiciantes": [
+            {
+                "nombre": "Adidas",
+                "logo": "images/auspiciantes/adidas.svg"
+            },
+            {
+                "nombre": "Aerolineas Argentinas",
+                "logo": "images/auspiciantes/aerolineas-arg.svg"
+            },
+            {
+                "nombre": "Binance",
+                "logo": "images/auspiciantes/binance.svg"
+            },
+            {
+                "nombre": "Linux",
+                "logo": "images/auspiciantes/linux.svg"
+            },
+            {
+                "nombre": "Red Hat",
+                "logo": "images/auspiciantes/red-hat.svg"
+            },
+            {
+                "nombre": "Santander",
+                "logo": "images/auspiciantes/santander.svg"
+            },
+            {
+                "nombre": "Shimano",
+                "logo": "images/auspiciantes/shimano.svg"
+            },
+            {
+                "nombre": "Stanley",
+                "logo": "images/auspiciantes/stanley.svg"
+            },
+        ],
     }
 }
 
 
 @app.route("/80k")
 def tandil80k():
-    return render_template("index.html", section=80)
+    evento = info_evento[1]
+    return render_template("index.html", section=80, evento=evento)
 
 
 @app.route("/30k")
 def tandil30k():
-    return render_template("index.html", section=30)
+    evento = info_evento[1]
+    return render_template("index.html", section=30, evento=evento)
 
 
 @app.route("/registration", methods=["GET"])
