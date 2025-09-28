@@ -9,26 +9,27 @@ Trabajo practico N°2 para la materia de <strong>Introduccion al desarrollo de s
 
 
 
-# Como arrancar
+## Configuración y Ejecución
 
-## script de instalacion:
+El proyecto incluye un script para automatizar la configuración inicial. Los pasos para la instalación y ejecución son:
 
-`./scripts/setup.sh`
+1.  **Preparar y ejecutar el script de configuración:**
+    Este comando da permisos de ejecución y corre el script que crea la estructura de carpetas y el entorno virtual.
+    ```bash
+    chmod +x crear_proyecto.sh && ./crear_proyecto.sh
+    ```
 
+2.  **Activar el entorno virtual:**
+    ```bash
+    source .venv/bin/activate
+    ```
 
-## 1. instalar el entorno virtual
-`sudo apt install python3.12-venv && python3 -m venv .venv`
+3.  **Instalar las dependencias:**
+    ```bash
+    pip install Flask
+    ```
 
-## 2. Activar entorno virtual
-`source ./.venv/bin/activate`
-
-#### Desactivar entorno virtual
-`deactivate ./.venv/bin/activate`
-
-## 3. Una vez dentro del entorno virtual podemos instalar flask  
-`pip install flask`
-
-## 4. Levantar el proyecto
-`Flask run`
-
-
+4.  **Iniciar el servidor de desarrollo:**
+    ```bash
+    flask run
+    ```

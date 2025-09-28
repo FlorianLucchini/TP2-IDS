@@ -2,6 +2,7 @@ from flask import Flask, render_template, request, redirect, url_for
 
 app = Flask(__name__)
 
+# Información del evento
 info_evento = {
     1: {
         "nombre": "Rally MTB 2025",
@@ -18,7 +19,10 @@ info_evento = {
         "Auspiciantes": ["ausp1", "auspN"],
     }
 }
-
+#Rutas
+@app.route("/")
+def redirection():
+    return redirect(url_for("tandil80k"))
 
 @app.route("/80k")
 def tandil80k():
@@ -35,7 +39,7 @@ def registration():
     evento = info_evento[1]
     return render_template("registration.html", evento=evento)
 
-
+# Manejo del formulario
 @app.route("/registration", methods=["POST"])
 def submit_registration():
     nombre = request.form["nombre"]
