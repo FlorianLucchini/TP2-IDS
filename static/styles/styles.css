@@ -33,6 +33,9 @@
 
 .header__logo {
     background-color: gray;
+    height: 40px;
+    width: auto;
+    object-fit: contain;
 }
 
 form {
