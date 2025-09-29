@@ -5,38 +5,47 @@
     box-sizing: border-box;
 }
 
-.header {
+header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    padding: 1rem;
-}
-
-.navbar {
-    display: inherit;
-    justify-content: space-evenly;
-    color: white;
-    background-color: rgba(30, 30, 30, 1);
-    flex-grow: 1;
-}
-
-.navbar__item {
-    padding: 0.5rem;
-    font-weight: bolder;
-    transition: trasform;
-
-    .navbar__item:hover {
-        transform: scale(1.5);
-    }
+    padding: 0rem 2rem;
+    background: linear-gradient(to right, 
+        white 0%,
+        white 10%,
+        rgba(30,30,30,1) 80%,
+        rgba(30,30,30,1) 100%
+    );
+    position: sticky;
+    top: 0;
+    z-index: 1000;
 }
 
 .header__logo {
-    background-color: gray;
-    height: 40px;
+    max-height: 100px;
+    height: 100%;
     width: auto;
     object-fit: contain;
 }
+
+.navbar {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.navbar__item {
+    color: white;
+    font-weight: bolder;
+    text-decoration: none;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.navbar__item:hover {
+    transform: scale(1.2);
+    color: #00ff99; /* MODIFICAR CON 80k Y 30k */
+}
+
 
 /* --- HERO SECTION --- */
 
