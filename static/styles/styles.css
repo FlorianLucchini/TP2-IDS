@@ -113,6 +113,50 @@ header {
 }
 
 
+/* --- BANNER SECTION --- */
+
+#banner-section {
+  position: relative;
+  height: 100vh;
+  background: url("../images/banner.png") no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.banner-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+}
+
+.banner-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  padding: 20px;
+}
+
+.banner-title {
+  font-size: 3.5rem;
+  margin-bottom: 10px;
+  font-weight: 600;
+  color: white;
+}
+
+.banner-subtitle {
+  font-size: 3rem;
+  display: inline-block;
+  padding: 5px 15px;
+  margin-bottom: 15px;
+  font-weight: 800;
+  color: white;
+}
+
 .section-d h2 {
     text-align: center;
     margin: 30px 0;
