@@ -1,99 +1,105 @@
-{% extends "base.html" %}
+{% extends "base.html" %} {% block css_dinamico %} {% if section == 30 %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='static/30k.css') }}"
+/>
+{% elif section == 80 %}
+<link
+  rel="stylesheet"
+  href="{{ url_for('static', filename='static/80k.css') }}"
+/>
+{% endif %} {% endblock %} {% block content %}
+<!-- Hero Section -->
+<section id="hero-section">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+        <h1 class="hero-title">MTB TANDIL 2025</h1>
+        <h2 class="hero-subtitle">BUENOS AIRES</h2>
+        <p class="hero-date">PRÓXIMA EDICIÓN: 24 DE OCTUBRE 2025</p>
+        <a href="{{ url_for('registration') }}" class="hero-btn">INSCRIPCIÓN</a>
+    </div>
+</section>
 
-{% block css_dinamico %}
-    {% if section == 30 %}
-        <link rel="stylesheet" href="{{ url_for('static', filename='static/30k.css') }}">
-    {% elif section == 80 %}
-        <link rel="stylesheet" href="{{ url_for('static', filename='static/80k.css') }}">
-    {% endif %}
-{% endblock %}
+<section class="section-a"></section>
 
-{% block content %}
-    <section class="section-a">
-        
-    </section>
+<section class="section-d">
+  <h2>Encontrá toda la info para el retiro de tu kit</h2>
 
-    <section class="section-d">
-        <h2>Encontrá toda la info para el retiro de tu kit</h2>
+  <div class="kit-carrera-card">
+    <div class="kit-container">
+      <div class="kit-imagen">
+        <img
+          src="{{ url_for('static', filename='images/kit-carrera.png') }}"
+          alt="Kit de la carrera"
+        />
+      </div>
 
-        <div class="kit-carrera-card">
-            <div class="kit-container">
-                <div class="kit-imagen">
-                    <img src="{{ url_for('static', filename='images/kit-carrera.png') }}" alt="Kit de la carrera" />
-                </div>
-
-                <div class="retiro-info">
-                    <div class="info-block">
-                        <h3>Días y Horarios</h3>
-                        <ul>
-                            <li>Miércoles 22 de Octubre: 12 a 19 hs</li>
-                            <li>Jueves 23 de Octubre: 12 a 19 hs</li>
-                        </ul>
-                    </div>
-
-                    <div class="info-block">
-                        <h3>Lugar</h3>
-                        <p>Parque Sarmiento</p>
-                        <p>Ingreso por Av. Alvear</p>
-                        <a href="#" target="_blank">Ver en mapa</a>
-                    </div>
-
-                    <div class="info-block">
-                        <h3>Retiro kit Titular</h3>
-                        <ul>
-                            <li>Documento (DNI, Pasaporte, Otro)</li>
-                            <li>Código QR</li>
-                            <li>Número de dorsal</li>
-                        </ul>
-                    </div>
-
-                    <div class="info-block">
-                        <h3>Retiro kit por un tercero</h3>
-                        <ul>
-                            <li>Documento del titular (DNI, Pasaporte, Otro)</li>
-                            <li>Documento del que retira (DNI, Pasaporte, Otro)</li>
-                            <li>Código QR</li>
-                            <li>Número de dorsal</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+      <div class="retiro-info">
+        <div class="info-block">
+          <h3>Días y Horarios</h3>
+          <ul>
+            <li>Miércoles 22 de Octubre: 12 a 19 hs</li>
+            <li>Jueves 23 de Octubre: 12 a 19 hs</li>
+          </ul>
         </div>
-    </section>
 
-    <section class="map-section">
-        <h2>Recorrido</h2>
-    
-        {% if section == 80 %}
-            <h3>Modalidad 80k</h3>
-            <iframe 
-                src="{{ evento.mapas['80'] }}" 
-                width="90%" 
-                height="480">
-            </iframe>
-    
-        {% elif section == 30 %}
-            <h3>Modalidad 30k</h3>
-            <iframe 
-                src="{{ evento.mapas['30'] }}" 
-                width="90%" 
-                height="480">
-            </iframe>
-        {% endif %}
-    
-    </section>
-
-    <section class="section-f">
-        <div class="auspiciantes">
-            <h2>NOS ACOMPAÑAN</h2>
-            <div class="logos">
-                {% for ausp in evento["Auspiciantes"] %}
-                    <div class="logo-card">
-                        <img src="{{ url_for('static', filename=ausp['logo']) }}" alt="{{ ausp['nombre'] }}">
-                    </div>
-                {% endfor %}
-            </div>
+        <div class="info-block">
+          <h3>Lugar</h3>
+          <p>Parque Sarmiento</p>
+          <p>Ingreso por Av. Alvear</p>
+          <a href="#" target="_blank">Ver en mapa</a>
         </div>
-    </section>
+
+        <div class="info-block">
+          <h3>Retiro kit Titular</h3>
+          <ul>
+            <li>Documento (DNI, Pasaporte, Otro)</li>
+            <li>Código QR</li>
+            <li>Número de dorsal</li>
+          </ul>
+        </div>
+
+        <div class="info-block">
+          <h3>Retiro kit por un tercero</h3>
+          <ul>
+            <li>Documento del titular (DNI, Pasaporte, Otro)</li>
+            <li>Documento del que retira (DNI, Pasaporte, Otro)</li>
+            <li>Código QR</li>
+            <li>Número de dorsal</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="map-section">
+  <h2>Recorrido</h2>
+
+  {% if section == 80 %}
+  <h3>Modalidad 80k</h3>
+  <iframe src="{{ evento.mapas['80'] }}" width="90%" height="480"> </iframe>
+
+  {% elif section == 30 %}
+  <h3>Modalidad 30k</h3>
+  <iframe src="{{ evento.mapas['30'] }}" width="90%" height="480"> </iframe>
+  {% endif %}
+</section>
+
+<section class="section-f">
+  <div class="auspiciantes">
+    <h2>NOS ACOMPAÑAN</h2>
+    <div class="logos">
+      {% for ausp in evento["Auspiciantes"] %}
+      <div class="logo-card">
+        <img
+          src="{{ url_for('static', filename=ausp['logo']) }}"
+          alt="{{ ausp['nombre'] }}"
+        />
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</section>
 
 {% endblock %}

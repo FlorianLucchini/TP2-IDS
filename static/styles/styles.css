@@ -38,6 +38,71 @@
     object-fit: contain;
 }
 
+/* --- HERO SECTION --- */
+
+#hero-section {
+  position: relative;
+  height: 100vh;
+  background: url("../images/hero-image.png") no-repeat center center/cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: white;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 800px;
+  padding: 20px;
+}
+
+.hero-title {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.hero-subtitle {
+  font-size: 5rem;
+  background: #00ff99; /* MODIFICAR CON 80k Y 30k */
+  color: black;
+  display: inline-block;
+  padding: 5px 15px;
+  margin-bottom: 15px;
+  font-weight: 800;
+}
+
+.hero-date {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+}
+
+.hero-btn {
+  display: inline-block;
+  padding: 12px 24px;
+  border: 2px solid white;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s ease;
+}
+
+.hero-btn:hover {
+  background: white;
+  color: black;
+}
+
 
 .section-d h2 {
     text-align: center;
