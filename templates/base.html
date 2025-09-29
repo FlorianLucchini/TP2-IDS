@@ -1,65 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='styles/styles.css' ) }}">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles/styles.css' ) }}"
+    />
     {% block css_dinamico %}{% endblock %}
     <title>Document</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="header">
-        <nav class="navbar">
-            <a class="navbar__item" href="{{ url_for('tandil80k') }}">TANDIL 80K</a>
-            <a class="navbar__item" href="{{ url_for('tandil30k') }}">TANDIL 30K</a>
-            <a class="navbar__item" href="{{ url_for('registration') }}">INSCRIBITE</a>
-        </nav>
-        <img class="header__logo" src="{{ url_for('static', filename='images/logo-tandil.png') }}" alt="logo-de-pagina">
+      <nav class="navbar">
+        <a class="navbar__item" href="{{ url_for('tandil80k') }}">TANDIL 80K</a>
+        <a class="navbar__item" href="{{ url_for('tandil30k') }}">TANDIL 30K</a>
+        <a class="navbar__item" href="{{ url_for('registration') }}"
+          >INSCRIBITE</a
+        >
+      </nav>
+      <img
+        class="header__logo"
+        src="{{ url_for('static', filename='images/logo-tandil.png') }}"
+        alt="logo-de-pagina"
+      />
     </div>
 
-
     <main class="main">
-        {% block content %}{% endblock %}
+      {% block content %}{% endblock %}
+      <section id="gallery">
+        <div class="gallery-grid">
+          {% for i in range(1, 13) %}
+          <div class="gallery-item">
+            <img
+              src="{{ url_for('static', filename='images/gallery/image-' ~ i ~ '.png') }}"
+              alt="Imagen {{ i }}"
+            />
+          </div>
+          {% endfor %}
+        </div>
+      </section>
     </main>
 
     <footer class="footer">
-        <div class="footer-container">
-            <div class="footer-section">
-                <h3>Rally MTB Tandil 2025</h3>
-                <p>Organizado por el Club Social y Deportivo Unidos por el Deporte</p>
-                <p>Fecha: 24 de Octubre de 2025</p>
-                <p>Lugar: Tandil, Buenos Aires</p>
-            </div>
-
-            <div class="footer-section">
-                <h3>Contacto</h3>
-                <p><a href="mailto:info@mtbtandil.com">contacto@mtbtandil.com</a></p>
-                <p><a href="https://wa.me/5492494000000" target="_blank">WhatsApp</a></p>
-            </div>
-
-            <div class="footer-section social">
-                <h3>Seguinos</h3>
-                <div class="social-icons">
-                    <a href="https://instagram.com/mtbtandil" target="_blank">Instagram</a>
-                    <a href="https://tiktok.com/@mtbtandil" target="_blank">TikTok</a>
-                    <a href="https://facebook.com/mtbtandil" target="_blank">Facebook</a>
-                </div>
-            </div>
-
-            <div class="footer-section">
-                <h3>Enlaces</h3>
-                <ul>
-                    <li><a href="{{ url_for('tandil80k') }}">Distancia Larga 80K</a></li>
-                    <li><a href="{{ url_for('tandil30k') }}">Distancia Corta 30K</a></li>
-                    <li><a href="{{ url_for('registration') }}">Inscripción</a></li>
-                </ul>
-            </div>
+      <div class="footer-container">
+        <div class="footer-section">
+          <h3>Rally MTB Tandil 2025</h3>
+          <p>Organizado por el Club Social y Deportivo Unidos por el Deporte</p>
+          <p>Fecha: 24 de Octubre de 2025</p>
+          <p>Lugar: Tandil, Buenos Aires</p>
         </div>
-        <div class="footer-bottom">
-            <p>&copy; 2025 MTB Tandil - Todos los derechos reservados</p>
+
+        <div class="footer-section">
+          <h3>Contacto</h3>
+          <p><a href="mailto:info@mtbtandil.com">contacto@mtbtandil.com</a></p>
+          <p>
+            <a href="https://wa.me/5492494000000" target="_blank">WhatsApp</a>
+          </p>
         </div>
+
+        <div class="footer-section social">
+          <h3>Seguinos</h3>
+          <div class="social-icons">
+            <a href="https://instagram.com/mtbtandil" target="_blank"
+              >Instagram</a
+            >
+            <a href="https://tiktok.com/@mtbtandil" target="_blank">TikTok</a>
+            <a href="https://facebook.com/mtbtandil" target="_blank"
+              >Facebook</a
+            >
+          </div>
+        </div>
+
+        <div class="footer-section">
+          <h3>Enlaces</h3>
+          <ul>
+            <li>
+              <a href="{{ url_for('tandil80k') }}">Distancia Larga 80K</a>
+            </li>
+            <li>
+              <a href="{{ url_for('tandil30k') }}">Distancia Corta 30K</a>
+            </li>
+            <li><a href="{{ url_for('registration') }}">Inscripción</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 MTB Tandil - Todos los derechos reservados</p>
+      </div>
     </footer>
-</body>
+  </body>
 </html>
