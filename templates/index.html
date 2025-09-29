@@ -61,6 +61,27 @@
         </div>
     </section>
 
+    <section class="map-section">
+        <h2>Recorrido</h2>
+    
+        {% if section == 80 %}
+            <h3>Modalidad 80k</h3>
+            <iframe 
+                src="{{ evento.mapas['80'] }}" 
+                width="90%" 
+                height="480">
+            </iframe>
+    
+        {% elif section == 30 %}
+            <h3>Modalidad 30k</h3>
+            <iframe 
+                src="{{ evento.mapas['30'] }}" 
+                width="90%" 
+                height="480">
+            </iframe>
+        {% endif %}
+    
+    </section>
 
     <section class="section-f">
         <div class="auspiciantes">

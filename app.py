@@ -50,8 +50,14 @@ info_evento = {
                 "logo": "images/auspiciantes/stanley.svg"
             },
         ],
+        "mapas":{
+                "30": "https://www.google.com/maps/d/u/0/embed?mid=1LqZNAYrVNeR_wx14DsdN41flpj3P800&ehbc=2E312F",
+                "80": "https://www.google.com/maps/d/u/0/embed?mid=1y8KSYo-IM6fD5wMLvzg4ulV78IomJ_w&ehbc=2E312F"
+        }
     }
 }
+
+
 #Rutas
 @app.route("/")
 def redirection():
