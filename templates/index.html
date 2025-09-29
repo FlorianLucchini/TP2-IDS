@@ -19,9 +19,56 @@
         <a href="{{ url_for('registration') }}" class="hero-btn">INSCRIPCIÓN</a>
     </div>
 </section>
+<!-- End Hero Section -->
+ 
+<!-- Information Section -->
+<section class="information-section">
+  <div class="info-container">
+    <h2 class="info-title">DISTANCIA LARGA 80K</h2>
+    <p class="info-subtitle">
+      VIVÍ LA AVENTURA SOBRE DOS RUEDAS EN EL RECORRIDO MÁS EXIGENTE DE 
+      <span class="highlight">LATINOAMÉRICA</span>, UNA 
+      <span class="highlight">TRADICIÓN DEL MTB</span> QUE REÚNE A CICLISTAS DE TODAS PARTES DEL MUNDO
+    </p>
 
-<section class="section-a"></section>
+    <div class="info-cards">
+      <div class="info-card info-card-main">
+        <h3>LO IMPRESCINDIBLE</h3>
+        <p>
+          LA COMPETENCIA DE MTB MÁS EXIGENTE DE LA REGIÓN, QUE REÚNE A CICLISTAS DE ÉLITE Y APASIONADOS DEL 
+          MOUNTAIN BIKE DE TODO EL MUNDO
+        </p>
+      </div>
 
+      <div class="info-card">
+        <div class="info-icon">#</div>
+        <h4>FECHA</h4>
+        <p>24 DE OCTUBRE 2025</p>
+      </div>
+
+      <div class="info-card">
+        <div class="info-icon">#</div>
+        <h4>LARGADA/LLEGADA</h4>
+        <p>AV. ALVEAR Y CALLAO</p>
+      </div>
+
+      <div class="info-card">
+        <div class="info-icon">#</div>
+        <h4>HORARIO</h4>
+        <p>7:00 HS</p>
+      </div>
+
+      <div class="info-card">
+        <div class="info-icon">#</div>
+        <h4>INSCRIPCIÓN</h4>
+        <p><a href="#">COMPLETÁ EL FORMULARIO</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- End Information Section -->
+
+<!-- Banner Section -->
 <section id="banner-section">
     <div class="banner-overlay"></div>
     <div class="banner-content">
@@ -29,7 +76,9 @@
         <h2 class="banner-subtitle">DISFRUTÁ TANDIL</h2>
     </div>
 </section>
+<!-- End Banner Section -->
 
+<!-- Kit Section -->
 <section class="section-d">
   <h2>Encontrá toda la info para el retiro de tu kit</h2>
 
@@ -80,7 +129,9 @@
     </div>
   </div>
 </section>
+<!-- End Kit Section -->
 
+<!-- Map Section -->
 <section class="map-section">
   <h2>Recorrido</h2>
 
@@ -93,7 +144,9 @@
   <iframe src="{{ evento.mapas['30'] }}" width="90%" height="480"> </iframe>
   {% endif %}
 </section>
+<!-- End Map Section -->
 
+<!-- Auspiciantes Section -->
 <section class="section-f">
   <div class="auspiciantes">
     <h2>NOS ACOMPAÑAN</h2>
@@ -109,5 +162,5 @@
     </div>
   </div>
 </section>
-
+<!-- End Auspiciantes Section -->
 {% endblock %}

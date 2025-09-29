@@ -112,6 +112,84 @@ header {
   color: black;
 }
 
+/* --- INFORMATION SECTION --- */
+
+.information-section {
+  background: #fff;
+  padding: 50px 0;
+  margin: 5rem 7rem;
+  text-align: center;
+}
+
+.info-title {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.info-subtitle {
+  font-size: 1.2rem;
+  margin-bottom: 40px;
+  line-height: 1.5;
+  padding: 0 20px;
+}
+
+.highlight {
+  color: #19a74a; /* MODIFICAR CON 80k Y 30k */
+  font-weight: bold;
+}
+
+/* --- GRID DE CARDS --- */
+.info-cards {
+  display: grid;
+  grid-template-columns: minmax(300px, 2fr) repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1px;
+  border: 1px solid #ddd;
+}
+
+.info-card {
+  background: #f8f8f8;
+  padding: 25px;
+  border-right: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  transition: all 0.3s ease;
+}
+
+.info-card:hover {
+  background: #f1f1f1;
+  transform: translateY(-3px);
+}
+
+/* CARD PRINCIPAL */
+.info-card-main {
+  background: #e6e6e6;
+  text-align: left;
+}
+
+.info-card h4 {
+  margin: 10px 0;
+  font-size: 16px;
+  color: #333;
+}
+
+.info-card p {
+  font-size: 14px;
+  color: #555;
+}
+
+.info-icon {
+  font-size: 30px;
+  margin-bottom: 10px;
+}
+
+.info-card a {
+  text-decoration: none;
+  color: #19a74a; /* MODIFICAR CON 80k Y 30k */
+  font-weight: bold;
+}
+
+.info-card:nth-child(5n) {
+  border-right: none;
+}
 
 /* --- BANNER SECTION --- */
 
@@ -224,7 +302,7 @@ header {
 
 .auspiciantes {
   text-align: center;
-  margin: 40px 0;
+  margin: 40px 7rem;
 }
 
 .auspiciantes h2 {
@@ -267,6 +345,7 @@ header {
 /* Galería de fotos */
 #gallery {
   padding: 40px 20px;
+  margin: 0rem 7rem;
   background-color: #f8f8f8;
   text-align: center;
 }
