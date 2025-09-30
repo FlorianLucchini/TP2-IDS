@@ -1,14 +1,20 @@
-{% extends "base.html" %} {% block css_dinamico %} {% if section == 30 %}
-<link
-  rel="stylesheet"
-  href="{{ url_for('static', filename='static/30k.css') }}"
-/>
-{% elif section == 80 %}
-<link
-  rel="stylesheet"
-  href="{{ url_for('static', filename='static/80k.css') }}"
-/>
-{% endif %} {% endblock %} {% block content %}
+{% extends "base.html" %} 
+
+{% block css_dinamico %}
+    {% if section == 30 %}
+      <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='styles/30k.css' ) }}"
+      />
+    {% elif section == 80 %}
+      <link
+        rel="stylesheet"
+        href="{{ url_for('static', filename='styles/80k.css') }}"
+      />
+    {% endif %}
+{% endblock %}
+
+{% block content %}
 <!-- Hero Section -->
 <section id="hero-section">
     <div class="hero-overlay"></div>

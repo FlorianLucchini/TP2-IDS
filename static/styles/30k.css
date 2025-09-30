@@ -1,0 +1,30 @@
+:root {
+    --primary-color: #b300ff;
+}
+
+.navbar__item {
+    border: 2px dotted var(--primary-color);
+}
+
+.navbar__item:hover {
+  background: var(--primary-color);
+}
+
+@media (min-width: 46rem) {
+    .navbar__item {
+        border: none;
+    }
+
+    .navbar__item:hover {
+        color: var(--primary-color);
+        background-color: transparent;
+    }
+}
+
+.header__logo {
+    border: 2px solid var(--primary-color);
+}
+
+.hero-subtitle {
+  background: var(--primary-color);
+}
