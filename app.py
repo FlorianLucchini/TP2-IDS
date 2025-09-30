@@ -23,8 +23,9 @@ info_evento = {
         "organizador": "Club Social y Deportivo Unidos por el Deporte",
         "descripcion": "Carrera de MTB rural en dos modalidades 30km y 80km …",
         "fecha": "24 de Octubre de 2025",
-        "horario": "8am",
+        "horario": "8:00 hs",
         "lugar": "Tandil, Buenos Aires",
+        "largada": "Av Alvear y Callao",
         "tipo_carrera": "MTB rural",
         "modalidad_costo": {
             1: {"nombre": "Distancia Corta", "valor": "100"},

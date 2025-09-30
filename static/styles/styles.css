@@ -160,7 +160,7 @@
 
 .information-section {
   background: #fff;
-  padding: 50px 0;
+  padding: 3rem 0;
   margin: 5rem 7rem;
   text-align: center;
 }
@@ -174,7 +174,49 @@
   font-size: 1.2rem;
   margin-bottom: 40px;
   line-height: 1.5;
-  padding: 0 20px;
+  padding: 0 2rem;
+}
+
+.info-icon {
+  font-size: 32px;
+  margin-bottom: 15px;
+  color: #19a74a; /* MODIFICAR CON 80k Y 30k */
+  transition: transform 0.3s ease;
+}
+
+.info-text {
+  transition: transform 0.3s ease;
+  margin-top: 2rem;
+}
+
+.info-card:hover .info-icon {
+  transform: translateY(-15px);
+}
+
+.info-card:hover .info-text {
+  transform: translateY(10px);
+}
+
+.info-text h4 {
+  margin: 8px 0;
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+}
+
+.info-text p {
+  font-size: 14px;
+  color: #555;
+}
+
+.info-card a {
+  color: #19a74a; /* MODIFICAR CON 80k Y 30k */
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.info-card a:hover {
+  text-decoration: underline;
 }
 
 .highlight {
@@ -182,58 +224,33 @@
   font-weight: bold;
 }
 
-/* --- GRID DE CARDS --- */
-.info-cards {
+/* --- CARDS RESPONSIVE --- */
+.cards {
   display: grid;
-  grid-template-columns: minmax(300px, 2fr) repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1px;
-  border: 1px solid #ddd;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin: 0 auto;
+  max-width: 1200px;
 }
 
-.info-card {
+.card {
   background: #f8f8f8;
-  padding: 25px;
-  border-right: 1px solid #ddd;
-  border-bottom: 1px solid #ddd;
+  padding: 50px;
+  border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.05);
   transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
 }
 
-.info-card:hover {
+.card:hover {
+  box-shadow: 0 6px 12px rgba(0,0,0,0.1);
   background: #f1f1f1;
-  transform: translateY(-3px);
 }
 
-/* CARD PRINCIPAL */
-.info-card-main {
-  background: #e6e6e6;
-  text-align: left;
-}
-
-.info-card h4 {
-  margin: 10px 0;
-  font-size: 16px;
-  color: #333;
-}
-
-.info-card p {
-  font-size: 14px;
-  color: #555;
-}
-
-.info-icon {
-  font-size: 30px;
-  margin-bottom: 10px;
-}
-
-.info-card a {
-  text-decoration: none;
-  color: #19a74a; /* MODIFICAR CON 80k Y 30k */
-  font-weight: bold;
-}
-
-.info-card:nth-child(5n) {
-  border-right: none;
-}
 
 /* --- BANNER SECTION --- */
 
@@ -279,69 +296,48 @@
   color: white;
 }
 
-.section-d h2 {
+/* --- KIT SECTION --- */
+
+.kit-section {
+  padding: 2rem 0;
+  margin: 3rem 7rem;
   text-align: center;
-  margin: 30px 0;
-  color: #333;
 }
 
-.kit-carrera-card {
-  max-width: 1000px;
-  margin: 40px auto;
-  padding: 30px;
-  background-color: #ffffff;
-  border-radius: 15px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
-  color: #333;
-}
-
-/* Contenedor principal: imagen + bloques de info */
-.kit-container {
-  display: flex;
-  gap: 20px;
-  align-items: flex-start;
+.kit-imagen {
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
 .kit-imagen img {
-  max-width: 200px;
+  max-width: 300px;
+  width: 100%;
   height: auto;
   border-radius: 10px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.05);
 }
 
-/* Contenedor de bloques de información*/
-.retiro-info {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
-  flex: 1;
+/* --- MAPS SECTION --- */
+.map-section {
+    background-color: #f9f9f9;
+    padding: 40px 20px;
+    text-align: center;
 }
 
-.retiro-info .info-block {
-  flex: 1 1 220px;
-  padding: 15px;
-  border-left: 4px solid #007bff;
-  background-color: #f9f9f9;
-  border-radius: 8px;
+.map-section h2, .map-section h3 {
+    margin-bottom: 20px;
+    color: #333;
 }
 
-.retiro-info .info-block h3 {
-  margin-top: 0;
-  color: #007bff;
+.map-section iframe {
+    max-width: 100%;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
 }
 
-.retiro-info ul {
-  padding-left: 20px;
-  margin: 5px 0 0 0;
-}
 
-.retiro-info a {
-  color: #007bff;
-  text-decoration: none;
-}
-
-.retiro-info a:hover {
-  text-decoration: underline;
-}
+/* --- AUSPICIANTES SECTION --- */
 
 .auspiciantes {
   text-align: center;
@@ -359,7 +355,7 @@
   grid-template-columns: repeat(
     auto-fit,
     minmax(150px, 1fr)
-  ); /* 4 x fila si hay espacio */
+  );
   gap: 20px;
   justify-items: center;
 }
@@ -387,7 +383,8 @@
   object-fit: contain;
 }
 
-/* Galería de fotos */
+/* --- GALLERY SECTION --- */
+
 #gallery {
   padding: 40px 20px;
   margin: 0rem 7rem;
@@ -414,7 +411,7 @@
   transform: scale(1.05);
 }
 
-/* Formulario de inscripción */
+/* --- REGISTRATION --- */
 form {
   background-color: #fff;
   padding: 30px 40px;
@@ -544,4 +541,33 @@ button:hover {
   margin-top: 2rem;
   font-size: 0.85rem;
   color: #aaa;
+}
+
+
+
+
+/* --- RESPONSIVE --- */
+@media (max-width: 1024px) {
+  .cards {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .information-section {
+    padding: 40px 15px;
+    margin: 3rem 1rem;
+  }
+
+  .info-title {
+    font-size: 1.8rem;
+  }
+
+  .info-subtitle {
+    font-size: 1rem;
+  }
 }

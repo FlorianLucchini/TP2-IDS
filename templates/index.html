@@ -37,37 +37,34 @@
       <span class="highlight">TRADICIÓN DEL MTB</span> QUE REÚNE A CICLISTAS DE TODAS PARTES DEL MUNDO
     </p>
 
-    <div class="info-cards">
-      <div class="info-card info-card-main">
-        <h3>LO IMPRESCINDIBLE</h3>
-        <p>
-          LA COMPETENCIA DE MTB MÁS EXIGENTE DE LA REGIÓN, QUE REÚNE A CICLISTAS DE ÉLITE Y APASIONADOS DEL 
-          MOUNTAIN BIKE DE TODO EL MUNDO
-        </p>
+    <div class="cards">
+      <div class="card">
+        <div class="info-icon"><i class="fas fa-calendar-alt"></i></div>
+        <div class="info-text">
+          <h4>FECHA</h4>
+          <p>{{ evento.fecha }}</p>
+        </div>
       </div>
-
-      <div class="info-card">
-        <div class="info-icon">#</div>
-        <h4>FECHA</h4>
-        <p>24 DE OCTUBRE 2025</p>
+      <div class="card">
+        <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+        <div class="info-text">
+          <h4>LARGADA/LLEGADA</h4>
+          <p>{{ evento.largada }}</p>
+        </div>
       </div>
-
-      <div class="info-card">
-        <div class="info-icon">#</div>
-        <h4>LARGADA/LLEGADA</h4>
-        <p>AV. ALVEAR Y CALLAO</p>
+      <div class="card">
+        <div class="info-icon"><i class="fas fa-clock"></i></div>
+        <div class="info-text">
+          <h4>HORARIO</h4>
+          <p>{{ evento.horario }}</p>
+        </div>
       </div>
-
-      <div class="info-card">
-        <div class="info-icon">#</div>
-        <h4>HORARIO</h4>
-        <p>7:00 HS</p>
-      </div>
-
-      <div class="info-card">
-        <div class="info-icon">#</div>
-        <h4>INSCRIPCIÓN</h4>
-        <p><a href="#">COMPLETÁ EL FORMULARIO</a></p>
+      <div class="card">
+        <div class="info-icon"><i class="fas fa-edit"></i></div>
+        <div class="info-text">
+          <h4>INSCRIPCIÓN</h4>
+          <p><a href="{{ url_for('registration') }}">COMPLETÁ EL FORMULARIO</a></p>
+        </div>
       </div>
     </div>
   </div>
@@ -85,54 +82,55 @@
 <!-- End Banner Section -->
 
 <!-- Kit Section -->
-<section class="section-d">
-  <h2>Encontrá toda la info para el retiro de tu kit</h2>
-
-  <div class="kit-carrera-card">
-    <div class="kit-container">
+<section class="kit-section">
+  <div class="kit-container">
+    <h2 class="info-title">Encontrá toda la info para el retiro de tu kit</h2>
       <div class="kit-imagen">
         <img
           src="{{ url_for('static', filename='images/kit-carrera.png') }}"
           alt="Kit de la carrera"
         />
       </div>
-
-      <div class="retiro-info">
-        <div class="info-block">
-          <h3>Días y Horarios</h3>
-          <ul>
-            <li>Miércoles 22 de Octubre: 12 a 19 hs</li>
-            <li>Jueves 23 de Octubre: 12 a 19 hs</li>
-          </ul>
+      <div class="cards">
+        <div class="card">
+          <div class="info-text">
+            <h3>Días y Horarios</h3>
+            <ul>
+              <li>Miércoles 22 de Octubre: 12 a 19 hs</li>
+              <li>Jueves 23 de Octubre: 12 a 19 hs</li>
+            </ul>
+          </div>
         </div>
-
-        <div class="info-block">
-          <h3>Lugar</h3>
-          <p>Parque Sarmiento</p>
-          <p>Ingreso por Av. Alvear</p>
-          <a href="#" target="_blank">Ver en mapa</a>
+        <div class="card">
+          <div class="info-text">
+            <h3>Lugar</h3>
+            <p>Parque Sarmiento</p>
+            <p>Ingreso por Av. Alvear</p>
+            <a href="#" target="_blank">Ver en mapa</a>
+          </div>
+        </div>  
+        <div class="card">
+          <div class="info-text">
+            <h3>Retiro kit Titular</h3>
+            <ul>
+              <li>Documento (DNI, Pasaporte, Otro)</li>
+              <li>Código QR</li>
+              <li>Número de dorsal</li>
+            </ul>
+          </div>
         </div>
-
-        <div class="info-block">
-          <h3>Retiro kit Titular</h3>
-          <ul>
-            <li>Documento (DNI, Pasaporte, Otro)</li>
-            <li>Código QR</li>
-            <li>Número de dorsal</li>
-          </ul>
-        </div>
-
-        <div class="info-block">
-          <h3>Retiro kit por un tercero</h3>
-          <ul>
-            <li>Documento del titular (DNI, Pasaporte, Otro)</li>
-            <li>Documento del que retira (DNI, Pasaporte, Otro)</li>
-            <li>Código QR</li>
-            <li>Número de dorsal</li>
-          </ul>
+        <div class="card">
+          <div class="info-text">
+            <h3>Retiro kit por un tercero</h3>
+            <ul>
+              <li>Documento del titular (DNI, Pasaporte, Otro)</li>
+              <li>Documento del que retira (DNI, Pasaporte, Otro)</li>
+              <li>Código QR</li>
+              <li>Número de dorsal</li>
+            </ul>
+          </div>
         </div>
       </div>
-    </div>
   </div>
 </section>
 <!-- End Kit Section -->
