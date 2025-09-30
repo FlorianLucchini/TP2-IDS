@@ -1,5 +1,6 @@
 :root {
     --primary-color: #00ff99;
+    --primary-color-foreground: #00e67a;
 }
 
 .navbar__item {
@@ -25,6 +26,10 @@
     border: 2px solid var(--primary-color);
 }
 
-.hero-subtitle {
+.hero__subtitle {
   background: var(--primary-color);
+}
+
+.hero__subtitle:hover {
+  background: var(--primary-color-foreground);
 }

@@ -93,7 +93,7 @@
 
 /* --- HERO SECTION --- */
 
-#hero-section {
+.hero {
   position: relative;
   height: 100vh;
   background: url("../images/hero-image.png") no-repeat center center/cover;
@@ -104,7 +104,7 @@
   color: white;
 }
 
-.hero-overlay {
+.hero__overlay {
   position: absolute;
   top: 0;
   left: 0;
@@ -113,36 +113,37 @@
   background: rgba(0, 0, 0, 0.4);
 }
 
-.hero-content {
+.hero__content {
   position: relative;
   z-index: 1;
   max-width: 800px;
   padding: 20px;
 }
 
-.hero-title {
+.hero-__title {
   font-size: 3rem;
   margin-bottom: 10px;
   font-weight: 600;
 }
 
-.hero-subtitle {
+.hero__subtitle {
   font-size: 5rem;
-  color: black;
+  color: rgba(4, 4, 4, 0.8);
   display: inline-block;
   padding: 5px 15px;
   margin-bottom: 15px;
   font-weight: 800;
 }
 
-.hero-date {
+.hero__date {
   font-size: 1.5rem;
-  margin-bottom: 20px;
+  font-weight: 600;
+  margin-bottom: 1.2rem;
 }
 
-.hero-btn {
+.hero__btn {
   display: inline-block;
-  padding: 12px 24px;
+  padding: 0.8rem 1.5rem;
   border: 2px solid white;
   color: white;
   text-decoration: none;
@@ -150,7 +151,7 @@
   transition: 0.3s ease;
 }
 
-.hero-btn:hover {
+.hero__btn:hover {
   background: white;
   color: black;
 }
