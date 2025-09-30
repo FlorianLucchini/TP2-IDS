@@ -276,3 +276,22 @@ button:hover {
   font-size: 0.85rem;
   color: #aaa;
 }
+
+/* === Estilos para la Sección del Mapa === */
+.map-section {
+    background-color: #f9f9f9; /* Un fondo suave para la sección */
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.map-section h2, .map-section h3 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.map-section iframe {
+    max-width: 100%;
+    border: 1px solid #ddd; /* Borde sutil */
+    border-radius: 12px; /* Esquinas redondeadas */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1); /* Sombra para efecto tarjeta */
+}
