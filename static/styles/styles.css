@@ -10,14 +10,7 @@
   justify-content: space-between;
   flex-direction: row;
   align-items: center;
-  background: linear-gradient(
-    to right,
-    white 0%,
-    white 15%,
-    rgba(255, 255, 255, 0.8) 25%,
-    rgba(30, 30, 30, 0.6) 50%,
-    rgba(30, 30, 30, 1) 100%
-  );
+  background: rgba(30, 30, 30, 0.6);
   backdrop-filter: blur(0.3rem);
   padding: 2rem 3rem;
   position: sticky;
@@ -26,7 +19,7 @@
 }
 
 .header__logo {
-  max-height: 100px;
+  max-height: 85px;
   width: auto;
   object-fit: contain;
   border-radius: 50px;
