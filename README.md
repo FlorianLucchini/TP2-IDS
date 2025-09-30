@@ -21,7 +21,11 @@ El proyecto incluye un script para automatizar la configuración inicial. Los pa
 
 2.  **Activar el entorno virtual:**
     ```bash
+    # Linux
     source .venv/bin/activate
+
+    # Windows
+    .venv\Scripts\activate
     ```
 
 3.  **Instalar las dependencias:**
@@ -32,4 +36,13 @@ El proyecto incluye un script para automatizar la configuración inicial. Los pa
 4.  **Iniciar el servidor de desarrollo:**
     ```bash
     flask run
+    ```
+
+5. **Desactivar el entorno virtual**
+    ```bash
+    # Linux
+    deactivate .venv/bin/activate
+
+    # Windows
+    deactivate .venv\Scripts\activate
     ```
