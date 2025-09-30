@@ -14,7 +14,7 @@ app.config['MAIL_PASSWORD'] = 'Testing33.'
 app.config['MAIL_DEFAULT_SENDER'] = 'devtestingdev2@gmail.com'
 
 # Conectar Flask-Mail con la app
-mail.init_app(app)
+mail.init_app(app) 
 
 # Información del evento
 info_evento = {
@@ -71,7 +71,6 @@ info_evento = {
         }
     }
 }
-
 
 #Rutas
 @app.route("/")
