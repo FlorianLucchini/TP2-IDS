@@ -9,9 +9,9 @@ app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 587
 app.config['MAIL_USE_TLS'] = True
 app.config['MAIL_USE_SSL'] = False
-app.config['MAIL_USERNAME'] = 'your-email@gmail.com'
-app.config['MAIL_PASSWORD'] = 'your-email-password'
-app.config['MAIL_DEFAULT_SENDER'] = 'your-email@gmail.com'
+app.config['MAIL_USERNAME'] = 'devtestingdev2@gmail.com'
+app.config['MAIL_PASSWORD'] = 'Testing33.'
+app.config['MAIL_DEFAULT_SENDER'] = 'devtestingdev2@gmail.com'
 
 # Conectar Flask-Mail con la app
 mail.init_app(app)
@@ -129,7 +129,7 @@ Se ha recibido una nueva inscripción con los siguientes datos:
 
     # Creación y envío del correo
     msg = Message(subject=asunto,
-                  recipients=["organizador.carrera@example.com"], 
+                  recipients=["lpeneff@fi.uba.ar"], 
                   body=cuerpo_del_mensaje)
     
     mail.send(msg)
