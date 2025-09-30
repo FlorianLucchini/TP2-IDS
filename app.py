@@ -1,6 +1,20 @@
 from flask import Flask, render_template, request, redirect, url_for
+from flask_mail import Mail, Message
 
+
+mail = Mail()
 app = Flask(__name__)
+
+app.config['MAIL_SERVER'] = 'smtp.gmail.com'
+app.config['MAIL_PORT'] = 587
+app.config['MAIL_USE_TLS'] = True
+app.config['MAIL_USE_SSL'] = False
+app.config['MAIL_USERNAME'] = 'your-email@gmail.com'
+app.config['MAIL_PASSWORD'] = 'your-email-password'
+app.config['MAIL_DEFAULT_SENDER'] = 'your-email@gmail.com'
+
+# Conectar Flask-Mail con la app
+mail.init_app(app)
 
 # Información del evento
 info_evento = {
@@ -83,21 +97,45 @@ def registration():
 # Manejo del formulario
 @app.route("/registration", methods=["POST"])
 def submit_registration():
-    nombre = request.form["nombre"]
-    email = request.form["email"]
-    telefono = request.form["telefono"]
-    fecha_nacimiento = request.form["fecha_nacimiento"]
-    categoria = request.form["categoria"]
-    genero = request.form["genero"]
-    archivo = request.form.get("archivo")
+    #Captura de datos del formulario 
+    nombre = request.form.get("nombre")
+    email = request.form.get("email")
+    telefono = request.form.get("telefono")
+    fecha_nacimiento = request.form.get("fecha_nacimiento")
+    categoria = request.form.get("categoria")
+    genero = request.form.get("genero")
+    deslinde = request.form.get("deslinde") 
 
-    if not all([nombre, email, telefono, fecha_nacimiento, categoria, genero, archivo]):
-        return "Por favor completa todos los campos obligatorios."
+    # Validación
+    if not all([nombre, email, telefono, fecha_nacimiento, categoria, genero, deslinde]):
+        return redirect(url_for('registration'))
 
-	# Aquí se deben enviar los datos al email del organizador
-    print(f"Nuevo registro: {nombre}, {email}, {telefono}, {fecha_nacimiento}, {categoria}, {genero}")
+    #Procesamiento de datos y construcción del email
+    evento = info_evento[1]
+    modalidad_nombre = evento['modalidad_costo'][int(categoria)]['nombre']
 
-    return f"Gracias {nombre}, te registraste en la categoría {categoria}!"
+    asunto = f"Nueva Inscripción para {evento['nombre']}: {nombre}"
+    cuerpo_del_mensaje = f"""
+Se ha recibido una nueva inscripción con los siguientes datos:
+
+- Nombre: {nombre}
+- Email: {email}
+- Teléfono: {telefono}
+- Modalidad: {modalidad_nombre}
+- Género: {genero}
+- Fecha de Nacimiento: {fecha_nacimiento}
+- Deslinde de Responsabilidad: {deslinde.capitalize()}
+"""
+
+    # Creación y envío del correo
+    msg = Message(subject=asunto,
+                  recipients=["organizador.carrera@example.com"], 
+                  body=cuerpo_del_mensaje)
+    
+    mail.send(msg)
+
+    # Redirección
+    return redirect(url_for('registration'))
 
 if __name__ == "__main__":
     app.run("localhost", 8080, debug=True)
