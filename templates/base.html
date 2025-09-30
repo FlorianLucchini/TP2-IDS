@@ -5,8 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="stylesheet"
-      href="{{ url_for('static', filename='styles/styles.css' ) }}"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      integrity="sha512-pV4+X6KJzSYYhrc0L0K5uOZtq2k5+Vb2dD0Lr4p5v+E1eZ7pLJZlFl/6bV0V6XlR6Zr9xO8F1B3vKzF2X8bA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
     />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles/styles.css' ) }}"
+    />  
     {% block css_dinamico %}{% endblock %}
     <title>MTB TANDIL 2025 - {{ section }}k</title>
   </head>

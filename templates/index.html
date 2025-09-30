@@ -38,36 +38,33 @@
     </p>
 
     <div class="info-cards">
-      <div class="info-card info-card-main">
-        <h3>LO IMPRESCINDIBLE</h3>
-        <p>
-          LA COMPETENCIA DE MTB MÁS EXIGENTE DE LA REGIÓN, QUE REÚNE A CICLISTAS DE ÉLITE Y APASIONADOS DEL 
-          MOUNTAIN BIKE DE TODO EL MUNDO
-        </p>
-      </div>
-
       <div class="info-card">
-        <div class="info-icon">#</div>
-        <h4>FECHA</h4>
-        <p>24 DE OCTUBRE 2025</p>
+        <div class="info-icon"><i class="fas fa-calendar-alt"></i></div>
+        <div class="info-text">
+          <h4>FECHA</h4>
+          <p>{{ evento.fecha }}</p>
+        </div>
       </div>
-
       <div class="info-card">
-        <div class="info-icon">#</div>
-        <h4>LARGADA/LLEGADA</h4>
-        <p>AV. ALVEAR Y CALLAO</p>
+        <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+        <div class="info-text">
+          <h4>LARGADA/LLEGADA</h4>
+          <p>{{ evento.largada }}</p>
+        </div>
       </div>
-
       <div class="info-card">
-        <div class="info-icon">#</div>
-        <h4>HORARIO</h4>
-        <p>7:00 HS</p>
+        <div class="info-icon"><i class="fas fa-clock"></i></div>
+        <div class="info-text">
+          <h4>HORARIO</h4>
+          <p>{{ evento.horario }}</p>
+        </div>
       </div>
-
       <div class="info-card">
-        <div class="info-icon">#</div>
-        <h4>INSCRIPCIÓN</h4>
-        <p><a href="#">COMPLETÁ EL FORMULARIO</a></p>
+        <div class="info-icon"><i class="fas fa-edit"></i></div>
+        <div class="info-text">
+          <h4>INSCRIPCIÓN</h4>
+          <p><a href="{{ url_for('registration') }}">COMPLETÁ EL FORMULARIO</a></p>
+        </div>
       </div>
     </div>
   </div>
