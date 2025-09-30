@@ -117,16 +117,16 @@ def submit_registration():
 
     asunto = f"Nueva Inscripción para {evento['nombre']}: {nombre}"
     cuerpo_del_mensaje = f"""
-Se ha recibido una nueva inscripción con los siguientes datos:
+        Se ha recibido una nueva inscripción con los siguientes datos:
 
-- Nombre: {nombre}
-- Email: {email}
-- Teléfono: {telefono}
-- Modalidad: {modalidad_nombre}
-- Género: {genero}
-- Fecha de Nacimiento: {fecha_nacimiento}
-- Deslinde de Responsabilidad: {deslinde.capitalize()}
-"""
+        - Nombre: {nombre}
+        - Email: {email}
+        - Teléfono: {telefono}
+        - Modalidad: {modalidad_nombre}
+        - Género: {genero}
+        - Fecha de Nacimiento: {fecha_nacimiento}
+        - Deslinde de Responsabilidad: {deslinde.capitalize()}
+    """
 
     # Creación y envío del correo
     msg = Message(subject=asunto,
