@@ -58,6 +58,7 @@
 }
 
 @media (min-width: 46rem) {
+  /* Header for Desktop */
   .header {
     align-items: center;
     padding: 1rem 2rem;
@@ -153,32 +154,31 @@
 .info {
   background: #fff;
   padding: 3rem 0;
-  margin: 5rem 7rem;
+  margin: 3.5rem 2rem;
   text-align: center;
 }
 
 .info__title {
-  font-size: 2rem;
+  font-size: 1.8rem;
   margin-bottom: 1rem;
 }
 
 .info__subtitle {
-  font-size: 1.2rem;
-  margin-bottom: 40px;
+  font-size: 1rem;
+  margin-bottom: 2.4rem;
   line-height: 1.5;
   padding: 0 2rem;
 }
 
 .info__icon {
-  font-size: 32px;
-  margin-bottom: 15px;
-  color: #19a74a; /* MODIFICAR CON 80k Y 30k */
+  font-size: 2rem;
+  margin-bottom: 1rem;
   transition: transform 0.3s ease;
 }
 
 .info__text {
   transition: transform 0.3s ease;
-  margin-top: 2rem;
+  margin-top: 2.4rem;
 }
 
 .info__card:hover .info__icon {
@@ -191,18 +191,17 @@
 
 .info__text h4 {
   margin: 8px 0;
-  font-size: 16px;
+  font-size: 1rem;
   font-weight: 600;
   color: #333;
 }
 
 .info__text p {
-  font-size: 14px;
+  font-size: 0.9rem;
   color: #555;
 }
 
 .info__card a {
-  color: #19a74a; /* MODIFICAR CON 80k Y 30k */
   font-weight: bold;
   text-decoration: none;
 }
@@ -212,8 +211,33 @@
 }
 
 .info__highlight {
-  color: #19a74a; /* MODIFICAR CON 80k Y 30k */
   font-weight: bold;
+}
+
+@media (min-width: 46rem) {
+  .info {
+    margin: 5rem 7rem;
+  }
+  
+  .info__title {
+    font-size: 2.4rem;
+  }
+
+  .info__subtitle {
+    font-size: 1.3rem;
+    margin-bottom: 40px;
+    line-height: 1.5;
+    padding: 0 2rem;
+  }
+
+  .info__text h4 {
+    font-size: 1.2rem;
+  }
+
+  .info__text p {
+    font-size: 1rem;
+    color: #555;
+  }
 }
 
 /* --- CARDS RESPONSIVE --- */

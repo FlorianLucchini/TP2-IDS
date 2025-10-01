@@ -1,7 +1,9 @@
 :root {
-    --primary-color: #00ff99;
-    --primary-color-foreground: #00e67a;
+    --primary-color: #00ee8f;
+    --primary-color-foreground: #00d270;
 }
+
+/* Header section */
 
 .navbar__item {
     border: 2px dotted var(--primary-color);
@@ -26,10 +28,37 @@
     border: 2px solid var(--primary-color);
 }
 
+/* Hero section */
 .hero__subtitle {
   background: var(--primary-color);
 }
 
 .hero__subtitle:hover {
   background: var(--primary-color-foreground);
+}
+
+/* Info section */
+
+.info__title span {
+  color: var(--primary-color);
+}
+
+.info__title span:hover {
+  color: var(--primary-color-foreground);
+}
+
+.info__highlight {
+  color: var(--primary-color);
+}
+
+.info__highlight:hover {
+  color: var(--primary-color-foreground);
+}
+
+.info__icon {
+  color: var(--primary-color);
+}
+
+.info__card a {
+  color: var(--primary-color)
 }
