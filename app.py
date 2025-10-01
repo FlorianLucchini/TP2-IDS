@@ -10,8 +10,8 @@ app.config['MAIL_PORT'] = 587
 app.config['MAIL_USE_TLS'] = True
 app.config['MAIL_USE_SSL'] = False
 app.config['MAIL_USERNAME'] = 'devtestingdev2@gmail.com'
-app.config['MAIL_PASSWORD'] = 'Testing33.'
-app.config['MAIL_DEFAULT_SENDER'] = 'devtestingdev2@gmail.com'
+app.config['MAIL_PASSWORD'] = 'ajyo zinv jddg japi'
+app.config['MAIL_DEFAULT_SENDER'] = ('TP2-IDS', 'devtestingdev2@gmail.com')
 
 # Conectar Flask-Mail con la app
 mail.init_app(app) 
@@ -104,10 +104,10 @@ def submit_registration():
     fecha_nacimiento = request.form.get("fecha_nacimiento")
     categoria = request.form.get("categoria")
     genero = request.form.get("genero")
-    deslinde = request.form.get("deslinde") 
-
+    deslinde = request.files.get("deslinde") 
+    
     # Validación
-    if not all([nombre, email, telefono, fecha_nacimiento, categoria, genero, deslinde]):
+    if not all([nombre, email, telefono, fecha_nacimiento, categoria, genero]) or not deslinde: 
         return redirect(url_for('registration'))
 
     #Procesamiento de datos y construcción del email
@@ -124,13 +124,15 @@ def submit_registration():
         - Modalidad: {modalidad_nombre}
         - Género: {genero}
         - Fecha de Nacimiento: {fecha_nacimiento}
-        - Deslinde de Responsabilidad: {deslinde.capitalize()}
     """
-
+    
     # Creación y envío del correo
     msg = Message(subject=asunto,
                   recipients=["lpeneff@fi.uba.ar"], 
                   body=cuerpo_del_mensaje)
+    
+
+    msg.attach(deslinde.filename, deslinde.content_type, deslinde.read())
     
     mail.send(msg)
 
