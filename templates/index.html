@@ -28,40 +28,40 @@
 <!-- End Hero Section -->
  
 <!-- Information Section -->
-<section class="information-section">
-  <div class="info-container">
-    <h2 class="info-title">DISTANCIA LARGA 80K</h2>
-    <p class="info-subtitle">
+<section class="info">
+  <div class="info__container">
+    <h2 class="info__title">DISTANCIA LARGA 80K</h2>
+    <p class="info__subtitle">
       VIVÍ LA AVENTURA SOBRE DOS RUEDAS EN EL RECORRIDO MÁS EXIGENTE DE 
-      <span class="highlight">LATINOAMÉRICA</span>, UNA 
-      <span class="highlight">TRADICIÓN DEL MTB</span> QUE REÚNE A CICLISTAS DE TODAS PARTES DEL MUNDO
+      <span class="info__highlight">LATINOAMÉRICA</span>, UNA 
+      <span class="info__highlight">TRADICIÓN DEL MTB</span> QUE REÚNE A CICLISTAS DE TODAS PARTES DEL MUNDO
     </p>
 
-    <div class="cards">
-      <div class="card">
-        <div class="info-icon"><i class="fas fa-calendar-alt"></i></div>
-        <div class="info-text">
+    <div class="info__cards">
+      <div class="info__card">
+        <div class="info__icon"><i class="fas fa-calendar-alt"></i></div>
+        <div class="info__text">
           <h4>FECHA</h4>
           <p>{{ evento.fecha }}</p>
         </div>
       </div>
-      <div class="card">
-        <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
-        <div class="info-text">
+      <div class="info__card">
+        <div class="info__icon"><i class="fas fa-map-marker-alt"></i></div>
+        <div class="info__text">
           <h4>LARGADA/LLEGADA</h4>
           <p>{{ evento.largada }}</p>
         </div>
       </div>
-      <div class="card">
-        <div class="info-icon"><i class="fas fa-clock"></i></div>
-        <div class="info-text">
+      <div class="info__card">
+        <div class="info__icon"><i class="fas fa-clock"></i></div>
+        <div class="info__text">
           <h4>HORARIO</h4>
           <p>{{ evento.horario }}</p>
         </div>
       </div>
-      <div class="card">
-        <div class="info-icon"><i class="fas fa-edit"></i></div>
-        <div class="info-text">
+      <div class="info__card">
+        <div class="info__icon"><i class="fas fa-edit"></i></div>
+        <div class="info__text">
           <h4>INSCRIPCIÓN</h4>
           <p><a href="{{ url_for('registration') }}">COMPLETÁ EL FORMULARIO</a></p>
         </div>

@@ -113,7 +113,7 @@
   padding: 20px;
 }
 
-.hero-__title {
+.hero__title {
   font-size: 3rem;
   margin-bottom: 10px;
   font-weight: 600;
@@ -150,69 +150,68 @@
 }
 
 /* --- INFORMATION SECTION --- */
-
-.information-section {
+.info {
   background: #fff;
   padding: 3rem 0;
   margin: 5rem 7rem;
   text-align: center;
 }
 
-.info-title {
+.info__title {
   font-size: 2rem;
   margin-bottom: 1rem;
 }
 
-.info-subtitle {
+.info__subtitle {
   font-size: 1.2rem;
   margin-bottom: 40px;
   line-height: 1.5;
   padding: 0 2rem;
 }
 
-.info-icon {
+.info__icon {
   font-size: 32px;
   margin-bottom: 15px;
   color: #19a74a; /* MODIFICAR CON 80k Y 30k */
   transition: transform 0.3s ease;
 }
 
-.info-text {
+.info__text {
   transition: transform 0.3s ease;
   margin-top: 2rem;
 }
 
-.info-card:hover .info-icon {
+.info__card:hover .info__icon {
   transform: translateY(-15px);
 }
 
-.info-card:hover .info-text {
+.info__card:hover .info__text {
   transform: translateY(10px);
 }
 
-.info-text h4 {
+.info__text h4 {
   margin: 8px 0;
   font-size: 16px;
   font-weight: 600;
   color: #333;
 }
 
-.info-text p {
+.info__text p {
   font-size: 14px;
   color: #555;
 }
 
-.info-card a {
+.info__card a {
   color: #19a74a; /* MODIFICAR CON 80k Y 30k */
   font-weight: bold;
   text-decoration: none;
 }
 
-.info-card a:hover {
+.info__card a:hover {
   text-decoration: underline;
 }
 
-.highlight {
+.info__highlight {
   color: #19a74a; /* MODIFICAR CON 80k Y 30k */
   font-weight: bold;
 }
