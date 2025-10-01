@@ -30,7 +30,7 @@ El proyecto incluye un script para automatizar la configuración inicial. Los pa
 
 3.  **Instalar las dependencias:**
     ```bash
-    pip install Flask
+    pip install -r requirements.txt
     ```
 
 4.  **Iniciar el servidor de desarrollo:**

@@ -9,12 +9,12 @@ app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 587
 app.config['MAIL_USE_TLS'] = True
 app.config['MAIL_USE_SSL'] = False
-app.config['MAIL_USERNAME'] = 'your-email@gmail.com'
-app.config['MAIL_PASSWORD'] = 'your-email-password'
-app.config['MAIL_DEFAULT_SENDER'] = 'your-email@gmail.com'
+app.config['MAIL_USERNAME'] = 'devtestingdev2@gmail.com'
+app.config['MAIL_PASSWORD'] = 'ajyo zinv jddg japi'
+app.config['MAIL_DEFAULT_SENDER'] = ('TP2-IDS', 'devtestingdev2@gmail.com')
 
 # Conectar Flask-Mail con la app
-mail.init_app(app)
+mail.init_app(app) 
 
 # Información del evento
 info_evento = {
@@ -72,7 +72,6 @@ info_evento = {
     }
 }
 
-
 #Rutas
 @app.route("/")
 def redirection():
@@ -105,10 +104,10 @@ def submit_registration():
     fecha_nacimiento = request.form.get("fecha_nacimiento")
     categoria = request.form.get("categoria")
     genero = request.form.get("genero")
-    deslinde = request.form.get("deslinde") 
-
+    deslinde = request.files.get("deslinde") 
+    
     # Validación
-    if not all([nombre, email, telefono, fecha_nacimiento, categoria, genero, deslinde]):
+    if not all([nombre, email, telefono, fecha_nacimiento, categoria, genero]) or not deslinde: 
         return redirect(url_for('registration'))
 
     #Procesamiento de datos y construcción del email
@@ -117,21 +116,23 @@ def submit_registration():
 
     asunto = f"Nueva Inscripción para {evento['nombre']}: {nombre}"
     cuerpo_del_mensaje = f"""
-Se ha recibido una nueva inscripción con los siguientes datos:
+        Se ha recibido una nueva inscripción con los siguientes datos:
 
-- Nombre: {nombre}
-- Email: {email}
-- Teléfono: {telefono}
-- Modalidad: {modalidad_nombre}
-- Género: {genero}
-- Fecha de Nacimiento: {fecha_nacimiento}
-- Deslinde de Responsabilidad: {deslinde.capitalize()}
-"""
-
+        - Nombre: {nombre}
+        - Email: {email}
+        - Teléfono: {telefono}
+        - Modalidad: {modalidad_nombre}
+        - Género: {genero}
+        - Fecha de Nacimiento: {fecha_nacimiento}
+    """
+    
     # Creación y envío del correo
     msg = Message(subject=asunto,
-                  recipients=["organizador.carrera@example.com"], 
+                  recipients=["lpeneff@fi.uba.ar"], 
                   body=cuerpo_del_mensaje)
+    
+
+    msg.attach(deslinde.filename, deslinde.content_type, deslinde.read())
     
     mail.send(msg)
 

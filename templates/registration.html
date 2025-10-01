@@ -7,7 +7,7 @@
 {% block content %}
 <h1>Formulario de inscripción</h1>
 
-<form action="{{ url_for('submit_registration') }}" method="post" class="form">
+<form action="{{ url_for('submit_registration') }}" method="POST" class="form" enctype="multipart/form-data">
 
     <!-- Nombre -->
     <div class="form-group">
@@ -64,8 +64,8 @@
 
     <!-- Deslinde de responsabilidad -->
     <div class="form-group">
-        <label for="archivo">Adjuntar deslinde de responsabilidad:</label>
-        <input type="file" id="archivo" name="archivo" required>
+        <input type="file" id="deslinde" name="deslinde" required accept=".pdf,.doc,.docx">
+        <label for="deslinde">Descargue el <a href="{{ url_for('static', filename='Deslinde_Responsabilidad_MTB_Tandil_2025 (1).pdf') }}" target="_blank">Deslinde de Responsabilidad</a> y adjuntar firmado.</label>
     </div>
 
     <!-- Botón -->
