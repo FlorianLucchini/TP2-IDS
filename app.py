@@ -128,7 +128,7 @@ def submit_registration():
     
     # Creación y envío del correo
     msg = Message(subject=asunto,
-                  recipients=["lpeneff@fi.uba.ar"], 
+                  recipients=["flucchini@fi.uba.ar"], 
                   body=cuerpo_del_mensaje)
     
 
