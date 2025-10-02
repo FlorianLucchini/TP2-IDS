@@ -7,7 +7,9 @@
 {% block content %}
 <h1>Formulario de inscripción</h1>
 
-<form action="{{ url_for('submit_registration') }}" method="POST" class="form" enctype="multipart/form-data">
+<form
+class="form"
+action="{{ url_for('submit_registration') }}" method="POST" class="form" enctype="multipart/form-data">
 
     <!-- Nombre -->
     <div class="form-group">
