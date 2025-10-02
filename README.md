@@ -4,7 +4,7 @@ Trabajo practico N°2 para la materia de <strong>Introduccion al desarrollo de s
 
 ## Integrantes
 * Lukas Peneff
-* Florian Luchinni
+* Florian Lucchini
 * Harold Montaño
 
 
